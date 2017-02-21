@@ -1,0 +1,67 @@
+{
+  "name": "kv-reader",
+  "version": "0.0.0-semantic-release",
+  "description": "decode kv config files as used by svn",
+  "keywords": [
+    "svn",
+    "kv",
+    "config"
+  ],
+  "main": "dist/reader.js",
+  "module": "src/reader.js",
+  "scripts": {
+    "cover": "nyc npm test",
+    "test": "mocha tests/*_test.js",
+    "docs": "jsdoc2md -l off -t doc/README.hbs -f src/*.js >README.md",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "prepublish": "rollup --output=dist/reader.js -c -- src/reader.js",
+    "pretest": "npm run prepublish",
+    "posttest": "markdown-doctest",
+    "precover": "npm run prepublish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arlac77/reader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arlac77/reader/issues"
+  },
+  "homepage": "https://github.com/arlac77/reader#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "cracks": "3.1.2",
+    "cz-conventional-changelog": "^2.0.0",
+    "jsdoc-to-markdown": "^3.0.0",
+    "markdown-doctest": "^0.9.1",
+    "mocha": "^3.2.0",
+    "rollup": "^0.41.4",
+    "semantic-release": "^6.3.6",
+    "nyc": "^10.1.2"
+  },
+  "release": {
+    "verifyRelease": "cracks"
+  },
+  "contributors": [{
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">=6.9.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "include": [
+      "dist/**/*.js"
+    ],
+    "reporter": [
+      "lcov"
+    ],
+    "report-dir": "./coverage"
+  }
+}
