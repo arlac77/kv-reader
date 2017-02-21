@@ -22,7 +22,9 @@ decode kv config files as used by svn
 const fs = require('fs');
 const { reader } = require('kv-reader');
 
-reader(fs.inputStream('sss'))
+foreach (let [k,v] = reader(fs.createReadStream('fixtures/s1'))) {
+  console.log(`${k} = ${v}`);
+}
 
 ```
 
