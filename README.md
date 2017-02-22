@@ -31,12 +31,18 @@ foreach (let [k,v] of kv)) {
 ```
 
 # API Reference
-{{#modules~}}
-- {{name}}
-{{/modules}}
 
-{{#functions}}* {{>docs}}
-{{/functions}}
+* <a name="reader"></a>
+
+## reader(stream) ⇒ <code>Promise</code>
+**Kind**: global function  
+**Returns**: <code>Promise</code> - resolving to object  
+
+| Param | Type |
+| --- | --- |
+| stream | <code>Stream</code> | 
+
+
 * * *
 
 install

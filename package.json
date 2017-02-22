@@ -27,7 +27,9 @@
     "url": "https://github.com/arlac77/reader/issues"
   },
   "homepage": "https://github.com/arlac77/reader#readme",
-  "dependencies": {},
+  "dependencies": {
+    "line-input-stream": "^1.0.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "cracks": "3.1.2",
@@ -42,10 +44,12 @@
   "release": {
     "verifyRelease": "cracks"
   },
-  "contributors": [{
-    "name": "Markus Felten",
-    "email": "markus.felten@gmx.de"
-  }],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
   "license": "BSD-2-Clause",
   "engines": {
     "node": ">=6.9.4"
