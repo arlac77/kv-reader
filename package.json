@@ -16,7 +16,6 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "prepublish": "rollup --output=dist/reader.js -c -- src/reader.js",
     "pretest": "npm run prepublish",
-    "posttest": "markdown-doctest",
     "precover": "npm run prepublish"
   },
   "repository": {
@@ -44,12 +43,10 @@
   "release": {
     "verifyRelease": "cracks"
   },
-  "contributors": [
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
+  "contributors": [{
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
   "license": "BSD-2-Clause",
   "engines": {
     "node": ">=6.9.4"
