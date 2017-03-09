@@ -19,6 +19,24 @@ kv-reader
 ==========
 decode kv config files as used by svn
 
+example
+======
+```
+K 8
+passtype
+V 8
+keychain
+K 15
+svn:realmstring
+V 62
+<https://subversion.assembla.com:443> Assembla Restricted Area
+K 8
+username
+V 7
+abcdefg
+END
+```
+
 ```javascript
 const fs = require('fs');
 const { reader } = require('kv-reader');
@@ -31,11 +49,20 @@ foreach (let [k,v] of kv)) {
 
 ```
 
+```
+passtype = keychain
+svn:realmstring = <https://subversion.assembla.com:443> Assembla Restricted Area
+username = abcdefg
+```
+
 # API Reference
 
 * <a name="reader"></a>
 
 ## reader(stream) ⇒ <code>Promise</code>
+Transforms a input stream of kv data into a object
+with key value pairs assigned
+
 **Kind**: global function  
 **Returns**: <code>Promise</code> - resolving to object  
 
