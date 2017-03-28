@@ -16,7 +16,7 @@ export function reader(stream) {
       data += chunk;
       while (data.length > 5) {
         const m = data.match(/^(K|V)\s+(\d+)\n/);
-        if (m) {
+        if (m !== undefined) {
           const from = m[0].length,
             to = m[0].length + parseInt(m[2]);
           const v = data.slice(from, to);
