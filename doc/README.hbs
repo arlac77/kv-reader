@@ -41,12 +41,11 @@ END
 const fs = require('fs');
 const { reader } = require('kv-reader');
 
-const kv wait reader(fs.createReadStream('fixtures/s1'));
+const kv = wait reader(fs.createReadStream('fixtures/s1'));
 
-foreach (let [k,v] of kv)) {
+foreach (const [k,v] of kv)) {
   console.log(`${k} = ${v}`);
 }
-
 ```
 
 ```
