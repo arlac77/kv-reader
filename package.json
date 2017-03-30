@@ -10,13 +10,14 @@
   "main": "dist/reader.js",
   "module": "src/reader.js",
   "scripts": {
-    "cover": "nyc npm test",
-    "test": "mocha tests/*_test.js",
+    "cover": "nyc ava",
+    "test": "ava",
     "docs": "jsdoc2md -l off -t doc/README.hbs -f src/*.js >README.md",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "prepublish": "rollup --output=dist/reader.js -c -- src/reader.js",
-    "pretest": "npm run prepublish",
-    "precover": "npm run prepublish"
+    "pretest": "rollup -c rollup.config.test.js",
+    "precover": "rollup -c rollup.config.test.js",
+    "posttest": "markdown-doctest"
   },
   "repository": {
     "type": "git",
@@ -30,15 +31,17 @@
     "line-input-stream": "^1.0.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
     "cracks": "3.1.2",
     "cz-conventional-changelog": "^2.0.0",
     "jsdoc-to-markdown": "^3.0.0",
     "markdown-doctest": "^0.9.1",
-    "mocha": "^3.2.0",
     "nyc": "^10.2.0",
     "rollup": "^0.41.6",
-    "semantic-release": "^6.3.6"
+    "semantic-release": "^6.3.6",
+    "ava": "^0.18.2",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-multi-entry": "^2.0.1"
   },
   "release": {
     "verifyRelease": "cracks"
@@ -51,7 +54,7 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=7.7.1"
+    "node": ">=7.8.0"
   },
   "config": {
     "commitizen": {
@@ -66,5 +69,13 @@
       "lcov"
     ],
     "report-dir": "./coverage"
+  },
+  "ava": {
+    "files": [
+      "build/test-bundle.js"
+    ],
+    "require": [
+      "babel-register"
+    ]
   }
 }
