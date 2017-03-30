@@ -41,11 +41,12 @@ END
 const fs = require('fs');
 const { reader } = require('kv-reader');
 
-const kv = wait reader(fs.createReadStream('fixtures/s1'));
-
-foreach (const [k,v] of kv)) {
-  console.log(`${k} = ${v}`);
+async function sample() {
+  const kv = await reader(fs.createReadStream('tests/fixtures/s1'));
+  console.log(`passtype = ${kv.passtype}`);
 }
+
+sample();
 ```
 
 ```
