@@ -16,3 +16,12 @@ test('has values', async t => {
   t.deepEqual(kv.passtype, 'keychain');
   t.deepEqual(kv.username, 'abcdefg');
 });
+
+test('rejects on errors', async t => {
+  try {
+    const kv = await reader(fs.createReadStream(path.join(__dirname, '..', 'tests', 'fixtures', 'bad')));
+    t.fail();
+  } catch (e) {
+    t.pass();
+  }
+});

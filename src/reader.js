@@ -16,7 +16,10 @@ export function reader(stream) {
       data += chunk;
       while (data.length > 5) {
         const m = data.match(/^(K|V)\s+(\d+)\n/);
-        if (m !== undefined) {
+        if (m === undefined) {
+          reject(new Error(`invalid entry at ${data.length}`));
+          break;
+        } else {
           const from = m[0].length,
             to = m[0].length + parseInt(m[2]);
           const v = data.slice(from, to);
@@ -25,12 +28,7 @@ export function reader(stream) {
           } else {
             values[key] = v;
           }
-          //console.log(v);
           data = data.slice(to + 1);
-          //console.log(`${data.length} ${data}`);
-        } else {
-          reject(new Error(`invalid entry at ${data.length}`));
-          break;
         }
       }
     });
