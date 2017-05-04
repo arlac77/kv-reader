@@ -12,7 +12,7 @@
   "scripts": {
     "cover": "nyc ava",
     "test": "ava",
-    "docs": "jsdoc2md -l off -t doc/README.hbs -f src/*.js >README.md",
+    "docs": "jsdoc2md --configure doc/jsdoc.json -l off -t doc/README.hbs -f src/*.js >README.md",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "prepublish": "rollup --output=dist/reader.js -c -- src/reader.js",
     "pretest": "rollup -c rollup.config.test.js",
@@ -41,7 +41,9 @@
     "ava": "^0.19.1",
     "babel-preset-es2015-rollup": "^3.0.0",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-multi-entry": "^2.0.1"
+    "rollup-plugin-multi-entry": "^2.0.1",
+    "jsdoc-babel": "^0.3.0",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1"
   },
   "release": {
     "verifyRelease": "cracks"
@@ -54,7 +56,7 @@
   ],
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=7.9.0"
+    "node": ">=7.10.0"
   },
   "config": {
     "commitizen": {
