@@ -43,7 +43,8 @@
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-multi-entry": "^2.0.1",
     "jsdoc-babel": "^0.3.0",
-    "babel-plugin-transform-async-generator-functions": "^6.24.1"
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "xo": "^0.18.2"
   },
   "release": {
     "verifyRelease": "cracks"
@@ -84,5 +85,8 @@
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template.git"
     }
+  },
+  "xo": {
+    "space": {}
   }
 }
