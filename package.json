@@ -17,7 +17,7 @@
     "prepublish": "rollup --output=dist/reader.js -c -- src/reader.js",
     "pretest": "rollup -c rollup.config.test.js",
     "precover": "rollup -c rollup.config.test.js",
-    "posttest": "markdown-doctest"
+    "posttest": "npm run prepublish && markdown-doctest"
   },
   "repository": {
     "type": "git",
