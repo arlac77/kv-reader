@@ -1,7 +1,12 @@
-/* jslint node: true, esnext: true */
-'use strict';
+import babel from 'rollup-plugin-babel';
 
 export default {
   format: 'cjs',
-  plugins: []
+  plugins: [
+    babel({
+      babelrc: false,
+      presets: ['es2015-rollup'],
+      exclude: 'node_modules/**'
+    })
+  ]
 };

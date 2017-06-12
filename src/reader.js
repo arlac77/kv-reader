@@ -1,5 +1,3 @@
-/* jslint node: true, esnext: true */
-
 /**
  * Transforms a input stream of kv data into a object
  * with key value pairs assigned

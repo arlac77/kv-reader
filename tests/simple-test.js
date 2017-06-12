@@ -1,15 +1,11 @@
-/* jslint node: true, esnext: true */
-
-'use strict';
+import test from 'ava';
+import {
+  reader
+}
+from '../src/reader';
 
 const path = require('path'),
   fs = require('fs');
-
-import test from 'ava';
-
-const {
-  reader
-} = require('../dist/reader');
 
 test('has values', async t => {
   const kv = await reader(fs.createReadStream(path.join(__dirname, '..', 'tests', 'fixtures', 's1')));
@@ -19,7 +15,7 @@ test('has values', async t => {
 
 test('rejects on errors', async t => {
   try {
-    const kv = await reader(fs.createReadStream(path.join(__dirname, '..', 'tests', 'fixtures', 'bad')));
+    await reader(fs.createReadStream(path.join(__dirname, '..', 'tests', 'fixtures', 'bad')));
     t.fail();
   } catch (e) {
     t.pass();
