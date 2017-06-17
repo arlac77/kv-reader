@@ -1,12 +1,17 @@
 import babel from 'rollup-plugin-babel';
+import pkg from './package.json';
 
 export default {
-  format: 'cjs',
   plugins: [
     babel({
       babelrc: false,
-      presets: ['es2015-rollup'],
+      presets: ['stage-3'],
       exclude: 'node_modules/**'
     })
-  ]
+  ],
+  targets: [{
+    dest: pkg.main,
+    format: 'cjs'
+  }],
+  external: ['pratt-parser']
 };
