@@ -55,23 +55,7 @@ svn:realmstring = <https://subversion.assembla.com:443> Assembla Restricted Area
 username = abcdefg
 ```
 
-# API Reference
-
-* <a name="reader"></a>
-
-## reader(stream) ⇒ <code>Promise</code>
-Transforms a input stream of kv data into a object
-with key value pairs assigned
-
-**Kind**: global function  
-**Returns**: <code>Promise</code> - resolving to object  
-
-| Param | Type |
-| --- | --- |
-| stream | <code>Stream</code> | 
-
-
-* * *
+# API
 
 install
 =======
