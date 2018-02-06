@@ -4,7 +4,11 @@
   "main": "dist/reader.js",
   "module": "src/reader.js",
   "description": "decode kv config files as used by svn",
-  "keywords": ["svn", "kv", "config"],
+  "keywords": [
+    "svn",
+    "kv",
+    "config"
+  ],
   "contributors": [
     {
       "name": "Markus Felten",
@@ -34,7 +38,6 @@
     "markdown-doctest": "^0.9.1",
     "nyc": "^11.4.1",
     "rollup": "^0.55.3",
-    "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-multi-entry": "^2.0.2",
     "rollup-plugin-node-resolve": "^3.0.2",
@@ -56,13 +59,23 @@
     "verifyRelease": "cracks"
   },
   "ava": {
-    "files": ["build/*-test.js"],
-    "presets": ["env"],
-    "require": ["babel-register"]
+    "files": [
+      "build/*-test.js"
+    ],
+    "presets": [
+      "env"
+    ],
+    "require": [
+      "babel-register"
+    ]
   },
   "nyc": {
-    "include": ["build/*-test.js"],
-    "reporter": ["lcov"],
+    "include": [
+      "build/*-test.js"
+    ],
+    "reporter": [
+      "lcov"
+    ],
     "report-dir": "./build/coverage"
   },
   "xo": {
