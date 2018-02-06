@@ -42,7 +42,7 @@ const { reader } = require('kv-reader');
 
 async function sample() {
   const kv = await reader(fs.createReadStream('tests/fixtures/s1'));
-  console.log(`passtype = ${kv.passtype}`);
+  console.log(`passtype = ${kv.get('passtype')}`);
 }
 
 sample();
@@ -69,7 +69,7 @@ with key value pairs assigned
 
 -   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** resolving to object
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>>** resolving to object
 
 # install
 

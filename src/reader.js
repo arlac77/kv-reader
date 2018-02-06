@@ -2,11 +2,11 @@
  * Transforms a input stream of kv data into a object
  * with key value pairs assigned
  * @param {Stream} stream
- * @return {Promise} resolving to object
+ * @return {Promise<Map<string,string>>} resolving to object
  */
 export function reader(stream) {
-  return new Promise((fullfill, reject) => {
-    const values = {};
+  return new Promise((resolve, reject) => {
+    const values = new Map();
     let data = '';
     let key, value;
 
@@ -21,7 +21,7 @@ export function reader(stream) {
           if (m[1] === 'K') {
             key = v;
           } else {
-            values[key] = v;
+            values.set(key, v);
           }
           data = data.slice(to + 1);
         } else {
@@ -31,6 +31,6 @@ export function reader(stream) {
       }
     });
 
-    stream.on('end', () => fullfill(values));
+    stream.on('end', () => resolve(values));
   });
 }
