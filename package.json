@@ -1,6 +1,9 @@
 {
   "name": "kv-reader",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/reader.js",
   "module": "src/reader.js",
   "description": "decode kv config files as used by svn",
