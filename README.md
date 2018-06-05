@@ -58,13 +58,14 @@ sample();
 ### Table of Contents
 
 -   [reader](#reader)
+    -   [Parameters](#parameters)
 
 ## reader
 
 Transforms a input stream of kv data into a object
 with key value pairs assigned
 
-**Parameters**
+### Parameters
 
 -   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
 
