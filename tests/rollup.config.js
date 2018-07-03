@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 
 export default {
   input: 'tests/**/*-test.js',
-  external: ['ava'],
+  external: ['ava', 'fs', 'path'],
   plugins: [multiEntry(), resolve(), commonjs()],
 
   output: {

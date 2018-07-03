@@ -1,12 +1,11 @@
 import test from 'ava';
 import { reader } from '../src/reader';
-
-const path = require('path'),
-  fs = require('fs');
+import { join } from 'path';
+import { createReadStream } from 'fs';
 
 test('has values', async t => {
   const kv = await reader(
-    fs.createReadStream(path.join(__dirname, '..', 'tests', 'fixtures', 's1'))
+    createReadStream(join(__dirname, '..', 'tests', 'fixtures', 's1'))
   );
   t.deepEqual(kv.get('passtype'), 'keychain');
   t.deepEqual(kv.get('username'), 'abcdefg');
@@ -15,8 +14,8 @@ test('has values', async t => {
 test('rejects on errors', async t => {
   try {
     await reader(
-      fs.createReadStream(
-        path.join(__dirname, '..', 'tests', 'fixtures', 'bad')
+      createReadStream(
+        join(__dirname, '..', 'tests', 'fixtures', 'bad')
       )
     );
     t.fail();
