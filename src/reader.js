@@ -4,7 +4,7 @@
  * @param {Stream} stream
  * @return {Promise<Map<string,string>>} resolving to object
  */
-export function reader(stream) {
+export async function reader(stream) {
   return new Promise((resolve, reject) => {
     const values = new Map();
     let data = '';
@@ -16,7 +16,7 @@ export function reader(stream) {
         const m = data.match(/^(K|V)\s+(\d+)\n/);
         if (m) {
           const from = m[0].length,
-            to = m[0].length + parseInt(m[2]);
+            to = m[0].length + parseInt(m[2], 10);
           const v = data.slice(from, to);
           if (m[1] === 'K') {
             key = v;
