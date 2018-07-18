@@ -6,9 +6,10 @@
   },
   "main": "dist/reader.js",
   "module": "src/reader.js",
-  "description": "decode kv config files as used by svn",
+  "description": "decode kv config files as used by subversion",
   "keywords": [
     "svn",
+    "subversion",
     "kv",
     "config"
   ],

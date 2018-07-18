@@ -17,23 +17,25 @@
 
 # kv-reader
 
-decode kv config files as used by svn
+decode kv config files as used by subversion
 
 # example
 
-    K 8
-    passtype
-    V 8
-    keychain
-    K 15
-    svn:realmstring
-    V 62
-    <https://subversion.assembla.com:443> Assembla Restricted Area
-    K 8
-    username
-    V 7
-    abcdefg
-    END
+```txt
+K 8
+passtype
+V 8
+keychain
+K 15
+svn:realmstring
+V 62
+<https://subversion.assembla.com:443> Assembla Restricted Area
+K 8
+username
+V 7
+abcdefg
+END
+```
 
 ```javascript
 const fs = require('fs');
