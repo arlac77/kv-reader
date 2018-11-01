@@ -1,15 +1,9 @@
 /**
- * @typedef ValueProvider
- * @param {string} key
- * @param {string} value
- */
-
-/**
  * Transforms a input stream of kv data into a object
  * with key value pairs assigned
  * @param {Stream} stream
  * @param {ValueProvider} gotValue
- * @return {Promise<>} resolving to object
+ * @return {Promise} resolving to object
  */
 export async function reader(stream, gotValue) {
   return new Promise((resolve, reject) => {
@@ -40,3 +34,10 @@ export async function reader(stream, gotValue) {
     stream.on("end", () => resolve());
   });
 }
+
+/**
+ * call back function to provide key and value
+ * @callback ValueProvider
+ * @param {string} key
+ * @param {string} value
+ */
