@@ -63,7 +63,7 @@
     "url": "https://github.com/arlac77/kv-reader/issues"
   },
   "homepage": "https://github.com/arlac77/kv-reader#readme",
-  "release": {
+  "xrelease": {
     "verifyRelease": "cracks"
   },
   "ava": {
