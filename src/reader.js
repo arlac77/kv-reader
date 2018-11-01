@@ -1,16 +1,22 @@
 /**
+ * @typedef ValueProvider
+ * @param {string} key
+ * @param {string} value
+ */
+
+/**
  * Transforms a input stream of kv data into a object
  * with key value pairs assigned
  * @param {Stream} stream
- * @return {Promise<Map<string,string>>} resolving to object
+ * @param {ValueProvider} gotValue
+ * @return {Promise<>} resolving to object
  */
-export async function reader(stream) {
+export async function reader(stream, gotValue) {
   return new Promise((resolve, reject) => {
-    const values = new Map();
-    let data = '';
+    let data = "";
     let key, value;
 
-    stream.on('data', chunk => {
+    stream.on("data", chunk => {
       data += chunk;
       while (data.length > 5) {
         const m = data.match(/^(K|V)\s+(\d+)\n/);
@@ -18,10 +24,10 @@ export async function reader(stream) {
           const from = m[0].length,
             to = m[0].length + parseInt(m[2], 10);
           const v = data.slice(from, to);
-          if (m[1] === 'K') {
+          if (m[1] === "K") {
             key = v;
           } else {
-            values.set(key, v);
+            gotValue(key, v);
           }
           data = data.slice(to + 1);
         } else {
@@ -31,6 +37,6 @@ export async function reader(stream) {
       }
     });
 
-    stream.on('end', () => resolve(values));
+    stream.on("end", () => resolve());
   });
 }

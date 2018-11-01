@@ -38,12 +38,16 @@ END
 ```
 
 ```javascript
-const fs = require('fs');
-const { reader } = require('kv-reader');
+const fs = require("fs");
+const { reader } = require("kv-reader");
 
 async function sample() {
-  const kv = await reader(fs.createReadStream('tests/fixtures/s1'));
-  console.log(`passtype = ${kv.get('passtype')}`);
+  const kv = {};
+  await reader(
+    fs.createReadStream("tests/fixtures/s1"),
+    (key, value) => (kv[key] = value)
+  );
+  console.log(`passtype = ${kv.passtype}`);
 }
 
 sample();
@@ -59,8 +63,8 @@ sample();
 
 ### Table of Contents
 
--   [reader](#reader)
-    -   [Parameters](#parameters)
+- [reader](#reader)
+  - [Parameters](#parameters)
 
 ## reader
 
@@ -69,7 +73,7 @@ with key value pairs assigned
 
 ### Parameters
 
--   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
+- `stream` **[Stream](https://nodejs.org/api/stream.html)**
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>>** resolving to object
 
