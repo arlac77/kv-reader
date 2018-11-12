@@ -61,13 +61,13 @@
   "homepage": "https://github.com/arlac77/kv-reader#readme",
   "ava": {
     "files": [
-      "build/*-test.js"
+      "tests/*-test.js"
     ],
     "presets": [
       "env"
     ],
     "require": [
-      "babel-register"
+      "esm"
     ]
   },
   "xo": {
