@@ -6,33 +6,28 @@
  * @return {Promise} resolving to object
  */
 export async function reader(stream, gotValue) {
-  return new Promise((resolve, reject) => {
-    let data = "";
-    let key, value;
+  let data = "";
+  let key, value;
 
-    stream.on("data", chunk => {
-      data += chunk;
-      while (data.length > 5) {
-        const m = data.match(/^(K|V)\s+(\d+)\n/);
-        if (m) {
-          const from = m[0].length,
-            to = m[0].length + parseInt(m[2], 10);
-          const v = data.slice(from, to);
-          if (m[1] === "K") {
-            key = v;
-          } else {
-            gotValue(key, v);
-          }
-          data = data.slice(to + 1);
+  for await (const chunk of stream) {
+    data += chunk;
+    while (data.length > 5) {
+      const m = data.match(/^(K|V)\s+(\d+)\n/);
+      if (m) {
+        const from = m[0].length,
+          to = m[0].length + parseInt(m[2], 10);
+        const v = data.slice(from, to);
+        if (m[1] === "K") {
+          key = v;
         } else {
-          reject(new Error(`invalid entry at ${data.length}`));
-          break;
+          gotValue(key, v);
         }
+        data = data.slice(to + 1);
+      } else {
+        throw new Error(`invalid entry at ${data.length}`);
       }
-    });
-
-    stream.on("end", () => resolve());
-  });
+    }
+  }
 }
 
 /**

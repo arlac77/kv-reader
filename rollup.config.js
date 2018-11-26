@@ -14,6 +14,5 @@ export default {
     interop: false
   },
 
-  external: ['pratt-parser'],
   input: pkg.module
 };

@@ -30,9 +30,7 @@
     "lint": "documentation lint src/reader.js",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "dependencies": {
-    "line-input-stream": "^1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "ava": "^1.0.0-rc.2",
     "documentation": "^8.1.2",
