@@ -1,12 +1,15 @@
 import test from "ava";
 import { reader } from "../src/reader";
-import { join } from "path";
+import { join, dirname } from "path";
 import { createReadStream } from "fs";
+import { fileURLToPath } from "url";
+
+const here = dirname(fileURLToPath(import.meta.url));
 
 test("has values", async t => {
   const values = {};
   await reader(
-    createReadStream(join(__dirname, "..", "tests", "fixtures", "s1")),
+    createReadStream(join(here, "..", "tests", "fixtures", "s1")),
     (key, value) => {
       values[key] = value;
     }
@@ -18,7 +21,7 @@ test("has values", async t => {
 test("rejects on errors", async t => {
   try {
     await reader(
-      createReadStream(join(__dirname, "..", "tests", "fixtures", "bad")),
+      createReadStream(join(here, "..", "tests", "fixtures", "bad")),
       (key, value) => {}
     );
     t.fail();
