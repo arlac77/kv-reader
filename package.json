@@ -22,19 +22,19 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "cover": "c8 --temp-directory build/coverage ava && c8 report -r lcov --temp-directory build/coverage",
-    "test": "ava",
     "docs": "documentation readme src/reader.mjs --section=API",
+    "lint": "documentation lint src/reader.mjs",
     "posttest": "markdown-doctest",
-    "lint": "documentation lint src/reader.mjs"
+    "test": "ava"
   },
   "dependencies": {},
   "devDependencies": {
     "ava": "^1.0.1",
-    "documentation": "^9.1.1",
-    "markdown-doctest": "^0.9.1",
-    "semantic-release": "^15.13.2",
     "c8": "^3.2.1",
-    "esm": "^3.0.84"
+    "documentation": "^9.1.1",
+    "esm": "^3.0.84",
+    "markdown-doctest": "^0.9.1",
+    "semantic-release": "^15.13.2"
   },
   "engines": {
     "node": ">=10.15.0"
