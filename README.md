@@ -4,7 +4,6 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Build Status](https://secure.travis-ci.org/arlac77/kv-reader.png)](http://travis-ci.org/arlac77/kv-reader)
 [![codecov.io](http://codecov.io/github/arlac77/kv-reader/coverage.svg?branch=master)](http://codecov.io/github/arlac77/kv-reader?branch=master)
-[![Coverage Status](https://coveralls.io/repos/arlac77/kv-reader/badge.svg)](https://coveralls.io/r/arlac77/kv-reader)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/kv-reader/badge.svg)](https://snyk.io/test/github/arlac77/kv-reader)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/kv-reader.svg?style=flat-square)](https://github.com/arlac77/kv-reader/issues)
 [![Stories in Ready](https://badge.waffle.io/arlac77/kv-reader.svg?label=ready&title=Ready)](http://waffle.io/arlac77/kv-reader)
