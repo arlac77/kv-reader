@@ -1,8 +1,8 @@
 import test from "ava";
-import { reader } from "../src/reader";
 import { join, dirname } from "path";
 import { createReadStream } from "fs";
 import { fileURLToPath } from "url";
+import { reader } from "../src/reader.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 
