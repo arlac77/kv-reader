@@ -27,7 +27,8 @@
     "docs": "documentation readme src/reader.mjs --section=API",
     "lint": "documentation lint src/reader.mjs",
     "posttest": "markdown-doctest",
-    "test": "ava"
+    "test": "ava",
+    "prepare": "rollup -c"
   },
   "devDependencies": {
     "ava": "^2.4.0",
