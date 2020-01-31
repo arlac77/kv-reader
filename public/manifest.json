@@ -1,0 +1,10 @@
+{
+  "name": "kv-reader",
+  "description": "decode kv config files as used by subversion",
+  "icons": [
+    {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    }
+  ]
+}
