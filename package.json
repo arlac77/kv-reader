@@ -8,7 +8,8 @@
   "type": "module",
   "main": "src/reader.mjs",
   "exports": {
-    ".": "./src/reader.mjs"
+    ".": "./src/reader.mjs",
+    "./": "./"
   },
   "description": "decode kv config files as used by subversion",
   "keywords": [
