@@ -61,10 +61,10 @@ sample();
 
 ### Table of Contents
 
-- [reader](#reader)
-  - [Parameters](#parameters)
-- [ValueProvider](#valueprovider)
-  - [Parameters](#parameters-1)
+-   [reader](#reader)
+    -   [Parameters](#parameters)
+-   [ValueProvider](#valueprovider)
+    -   [Parameters](#parameters-1)
 
 ## reader
 
@@ -73,8 +73,8 @@ with key value pairs assigned
 
 ### Parameters
 
-- `stream` **[Stream](https://nodejs.org/api/stream.html)**
-- `gotValue` **[ValueProvider](#valueprovider)**
+-   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
+-   `gotValue` **[ValueProvider](#valueprovider)** 
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** resolving to object
 
@@ -86,8 +86,8 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 ### Parameters
 
-- `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
-- `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 # install
 
