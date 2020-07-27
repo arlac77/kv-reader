@@ -7,7 +7,7 @@
  */
 export async function reader(stream, gotValue) {
   let data = "";
-  let key, value;
+  let key;
 
   for await (const chunk of stream) {
     data += chunk;
