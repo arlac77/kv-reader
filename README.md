@@ -3,7 +3,7 @@
 [![minified size](https://badgen.net/bundlephobia/min/kv-reader)](https://bundlephobia.com/result?p=kv-reader)
 [![downloads](http://img.shields.io/npm/dm/kv-reader.svg?style=flat-square)](https://npmjs.org/package/kv-reader)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/kv-reader.svg?style=flat-square)](https://github.com/arlac77/kv-reader/issues)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fkv-reader%2Fbadge&style=flat)](https://actions-badge.atrox.dev/arlac77/kv-reader/goto)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fkv-reader%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/kv-reader/goto)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/kv-reader/badge.svg)](https://snyk.io/test/github/arlac77/kv-reader)
@@ -59,10 +59,10 @@ sample();
 
 ### Table of Contents
 
--   [reader](#reader)
-    -   [Parameters](#parameters)
--   [ValueProvider](#valueprovider)
-    -   [Parameters](#parameters-1)
+*   [reader](#reader)
+    *   [Parameters](#parameters)
+*   [ValueProvider](#valueprovider)
+    *   [Parameters](#parameters-1)
 
 ## reader
 
@@ -71,8 +71,8 @@ with key value pairs assigned
 
 ### Parameters
 
--   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
--   `gotValue` **[ValueProvider](#valueprovider)** 
+*   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
+*   `gotValue` **[ValueProvider](#valueprovider)** 
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** resolving to object
 
@@ -84,8 +84,8 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 ### Parameters
 
--   `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 # install
 
