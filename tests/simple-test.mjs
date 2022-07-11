@@ -1,15 +1,11 @@
 import test from "ava";
-import { join, dirname } from "path";
 import { createReadStream } from "fs";
-import { fileURLToPath } from "url";
-import { reader } from "../src/reader.mjs";
-
-const here = dirname(fileURLToPath(import.meta.url));
+import { reader } from "kv-reader";
 
 test("has values", async t => {
   const values = {};
   await reader(
-    createReadStream(join(here, "..", "tests", "fixtures", "s1")),
+    createReadStream(new URL("fixtures/s1", import.meta.url)),
     (key, value) => {
       values[key] = value;
     }
@@ -21,7 +17,7 @@ test("has values", async t => {
 test("rejects on errors", async t => {
   try {
     await reader(
-      createReadStream(join(here, "..", "tests", "fixtures", "bad")),
+      createReadStream(new URL("fixtures/bad", import.meta.url)),
       (key, value) => {}
     );
     t.fail();
