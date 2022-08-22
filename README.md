@@ -71,8 +71,8 @@ with key value pairs assigned
 
 ### Parameters
 
-*   `stream` **[Stream](https://nodejs.org/api/stream.html)** 
-*   `gotValue` **[ValueProvider](#valueprovider)** 
+*   `stream` **[Stream](https://nodejs.org/api/stream.html)**&#x20;
+*   `gotValue` **[ValueProvider](#valueprovider)**&#x20;
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** resolving to object
 
@@ -84,8 +84,8 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 ### Parameters
 
-*   `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
-*   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+*   `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
 
 # install
 
