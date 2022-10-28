@@ -1,5 +1,5 @@
 import test from "ava";
-import { createReadStream } from "fs";
+import { createReadStream } from "node:fs";
 import { reader } from "kv-reader";
 
 test("has values", async t => {
